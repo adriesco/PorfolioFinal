@@ -1,0 +1,87 @@
+---
+import 'tailwindcss/tailwind.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Portfolio</title>
+  </head>
+
+  <body class="bg-blue-950 text-white min-h-screen transition-colors duration-500">
+    <nav class="flex justify-between items-center p-6">
+      <div class="bg-teal-500 rounded-full">
+        <img
+          src="fotomia.jpg"
+          alt="foto"
+          class="rounded-full border-4 border-teal-500 w-24 h-24 md:w-32 md:h-32"
+        />
+      </div>
+      <div>
+        <a href="/home" class="text-gray-400 hover:text-teal-400 underline">
+          Volver Atrás
+        </a>
+      </div>
+    </nav>
+
+    <h1 class="text-4xl mt-3 p-2 text-cyan-400 underline font-bold text-center">
+      Contact:
+    </h1>
+
+    <section class="bg-gray-800 p-6 mt-4 rounded-lg max-w-3xl mx-5 md:mx-auto transform transition-transform duration-300 hover:scale-105 border border-cyan-400 section-dark">
+      <h1 class="text-2xl font-semibold mb-4 text-center">Redes Sociales:</h1>
+      <div class="bg-blue-700 p-4 rounded-lg border border-cyan-400">
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <a href="https://www.instagram.com/adriesco.7/?hl=es" target="_blank">
+            <img src="ig.png" alt="Instagram" class="w-20 ml-5" />
+          </a>
+          <a href="https://www.linkedin.com/feed/" target="_blank">
+            <img src="in.3.svg" alt="LinkedIn" class="w-20 ml-5" />
+          </a>
+          <a href="https://github.com/adriesco" target="_blank">
+            <img src="git.png" alt="GitHub" class="w-20 ml-5" />
+          </a>
+          <a href="https://mail.google.com/" target="_blank">
+            <img src="pngwing.com.png" alt="Correo" class="w-20 ml-5" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="flex justify-center mt-8">
+      <button
+        class="px-6 py-2 bg-gray-700 text-lg font-bold rounded-full hover:bg-gray-600 toggle-theme"
+      >
+        Cambiar a modo claro
+      </button>
+    </div>
+
+    <footer class="text-center mt-36 md:mt-40">
+      <p class="text-sm">&copy; 2024 Adrian. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      const body = document.body;
+      const toggleButton = document.querySelector(".toggle-theme");
+
+      toggleButton.addEventListener("click", function () {
+        body.classList.toggle("bg-white");
+        body.classList.toggle("text-black");
+        body.classList.toggle("bg-gray-900");
+        body.classList.toggle("text-white");
+
+        if (body.classList.contains("bg-white")) {
+          toggleButton.textContent = "Cambiar a modo oscuro";
+        } else {
+          toggleButton.textContent = "Cambiar a modo claro";
+        }
+
+        document.querySelectorAll(".section-dark").forEach((section) => {
+          section.classList.toggle("bg-gray-400");
+        });
+      });
+    </script>
+  </body>
+</html>
