@@ -1,0 +1,128 @@
+---
+import 'tailwindcss/tailwind.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+  </head>
+
+  <body
+    class="bg-blue-950 text-white min-h-screen transition-colors duration-500"
+    id="body"
+  >
+    <nav class="flex justify-between items-center p-6">
+      <div class="bg-teal-500 rounded-full">
+        <img
+          src="fotomia.jpg"
+          alt="foto"
+          class="rounded-full border-4 border-teal-500 w-24 h-24 md:w-32 md:h-32"
+        />
+      </div>
+      <div>
+        <a href="/home" class="text-gray-400 hover:text-teal-400 underline">
+          Volver Atrás
+        </a>
+      </div>
+    </nav>
+
+    <h1 class="text-4xl mt-3 p-2 text-cyan-400 underline font-bold text-center">
+      Projects:
+    </h1>
+
+    <section
+      class="bg-gray-800 p-4 rounded-lg mt-4 border border-cyan-400 md:max-w-xl md:mx-auto max-w-xl mx-5 section-dark"
+    >
+      <h2 class="text-xl font-semibold mb-3 text-center">
+        Proyectos Destacados:
+      </h2>
+      <div class="flex flex-col items-center gap-4">
+        <div
+          class="bg-blue-700 p-4 rounded-lg border border-cyan-400 w-full max-w-md transition-transform duration-300 hover:scale-105 div-dark"
+        >
+          <h3 class="font-bold text-lg mb-1">Simon Dice</h3>
+          <p class="text-sm mb-1">
+            Aplicación para recordar una cadena de colores.
+          </p>
+          <p class="text-sm mb-1">
+            <span class="font-bold">Lenguaje:</span> Java
+          </p>
+          <a
+            href="https://github.com/adriesco/SimonTerminado"
+            class="text-blue-400 underline"
+            >Ver código</a
+          >
+        </div>
+
+        <div
+          class="bg-blue-700 p-4 rounded-lg border border-cyan-400 w-full max-w-md transition-transform duration-300 hover:scale-105 div-dark"
+        >
+          <h3 class="font-bold text-lg mb-1">Maquina Virtual</h3>
+          <p class="text-sm mb-1">
+            Aplicación para introducir comandos por consola.
+          </p>
+          <p class="text-sm mb-1">
+            <span class="font-bold">Lenguaje:</span> Java
+          </p>
+          <a
+            href="https://github.com/adriesco/MaquinaVirtual"
+            class="text-blue-400 underline"
+            >Ver código</a
+          >
+        </div>
+
+        <div
+          class="bg-blue-700 p-4 rounded-lg border border-cyan-400 w-full max-w-md transition-transform duration-300 hover:scale-105 div-dark"
+        >
+          <h3 class="font-bold text-lg mb-1">Porfolio Tailwind</h3>
+          <p class="text-sm mb-1">Sitio web para mostrar mis proyectos.</p>
+          <p class="text-sm mb-1">
+            <span class="font-bold">Lenguaje:</span> Tailwind.
+          </p>
+          <a
+            href="https://github.com/adriesco/PorfolioExamen"
+            class="text-blue-400 underline"
+            >Ver código</a
+          >
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-8">
+        <button
+          id="toggleTheme"
+          class="px-6 py-2 bg-gray-700 text-lg font-bold rounded-full hover:bg-gray-600"
+        >
+          Cambiar a modo claro
+        </button>
+      </div>
+    </section>
+
+    <footer class="text-center mt-36 md:mt-40">
+      <p class="text-sm">&copy; 2024 Adrian. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      const body = document.getElementById("body");
+      const toggleButton = document.getElementById("toggleTheme");
+      const sections = document.querySelectorAll(".section-dark");
+      const divs = document.querySelectorAll(".div-dark");
+
+        toggleButton.addEventListener("click", function () {
+        body.classList.toggle("bg-white");
+        body.classList.toggle("text-black");
+
+        sections.forEach((section) => section.classList.toggle("bg-gray-400"));
+        divs.forEach((div) => div.classList.toggle("bg-gray-300"));
+
+        if (body.classList.contains("bg-white")) {
+          toggleButton.textContent = "Cambiar a modo oscuro";
+        } else {
+          toggleButton.textContent = "Cambiar a modo claro";
+        }
+      });
+    </script>
+  </body>
+</html>
