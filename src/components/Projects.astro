@@ -14,21 +14,6 @@ import 'tailwindcss/tailwind.css';
     class="bg-blue-950 text-white min-h-screen transition-colors duration-500"
     id="body"
   >
-    <nav class="flex justify-between items-center p-6">
-      <div class="bg-teal-500 rounded-full">
-        <img
-          src="fotomia.jpg"
-          alt="foto"
-          class="rounded-full border-4 border-teal-500 w-24 h-24 md:w-32 md:h-32"
-        />
-      </div>
-      <div>
-        <a href="/home" class="text-gray-400 hover:text-teal-400 underline">
-          Volver Atrás
-        </a>
-      </div>
-    </nav>
-
     <h1 class="text-4xl mt-3 p-2 text-cyan-400 underline font-bold text-center">
       Projects:
     </h1>
@@ -89,44 +74,29 @@ import 'tailwindcss/tailwind.css';
           >
         </div>
       </div>
-
-      <div class="flex justify-center mt-8">
-        <button
-          id="toggleTheme"
-          class="px-6 py-2 bg-gray-700 text-lg font-bold rounded-full hover:bg-gray-600"
-        >
-          Cambiar a modo claro
-        </button>
-      </div>
     </section>
-
-    <footer class="text-center mt-36 md:mt-40">
-      <p class="text-sm">&copy; 2024 Adrian. Todos los derechos reservados.</p>
-    </footer>
-
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const body = document.body;
-          const toggleButton = document.querySelector(".toggle-theme");
-      
-          toggleButton.addEventListener("click", function () {
-            body.classList.toggle("bg-white");
-            body.classList.toggle("text-black");
-            body.classList.toggle("bg-gray-900");
-            body.classList.toggle("text-white");
-      
-            if (body.classList.contains("bg-white")) {
-              toggleButton.textContent = "Cambiar a modo oscuro";
-            } else {
-              toggleButton.textContent = "Cambiar a modo claro";
-            }
-      
-            document.querySelectorAll(".section-dark").forEach((section) => {
-              section.classList.toggle("bg-gray-400");
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        const body = document.body;
+        const toggleButton = document.getElementById("toggleTheme");
+
+        toggleButton.addEventListener("click", function () {
+          body.classList.toggle("bg-white");
+          body.classList.toggle("text-black");
+          body.classList.toggle("bg-gray-900");
+          body.classList.toggle("text-white");
+
+          if (body.classList.contains("bg-white")) {
+            toggleButton.textContent = "Cambiar a modo oscuro";
+          } else {
+            toggleButton.textContent = "Cambiar a modo claro";
+          }
+
+          document.querySelectorAll(".section-dark").forEach((section) => {
+            section.classList.toggle("bg-gray-400");
           });
         });
-      </script>
-      
+      });
+    </script>
   </body>
 </html>
