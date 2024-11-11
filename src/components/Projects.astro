@@ -1,17 +1,8 @@
 ---
 import 'tailwindcss/tailwind.css';
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-  </head>
-
   <body
-    class="bg-blue-950 text-white min-h-screen transition-colors duration-500"
+    class=" text-white min-h-screen transition-colors duration-500"
     id="body"
   >
     <h1 class="text-4xl mt-3 p-2 text-cyan-400 underline font-bold text-center">
@@ -75,28 +66,5 @@ import 'tailwindcss/tailwind.css';
         </div>
       </div>
     </section>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const body = document.body;
-        const toggleButton = document.getElementById("toggleTheme");
-
-        toggleButton.addEventListener("click", function () {
-          body.classList.toggle("bg-white");
-          body.classList.toggle("text-black");
-          body.classList.toggle("bg-gray-900");
-          body.classList.toggle("text-white");
-
-          if (body.classList.contains("bg-white")) {
-            toggleButton.textContent = "Cambiar a modo oscuro";
-          } else {
-            toggleButton.textContent = "Cambiar a modo claro";
-          }
-
-          document.querySelectorAll(".section-dark").forEach((section) => {
-            section.classList.toggle("bg-gray-400");
-          });
-        });
-      });
-    </script>
   </body>
 </html>
