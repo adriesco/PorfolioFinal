@@ -60,14 +60,32 @@ import 'tailwindcss/tailwind.css';
     </section>
 
     <script>
-
       const body = document.getElementById("body");
       const toggleButton = document.getElementById("toggleTheme");
+    
+      // Seleccionar las secciones y los divs dentro de ellas
+      const sections = document.querySelectorAll('.section-dark');
+      const divs = document.querySelectorAll('.div-dark');
+    
       toggleButton.addEventListener("click", function () {
+        // Cambiar las clases del body
         body.classList.toggle("bg-white");
         body.classList.toggle("text-black");
         body.classList.toggle("bg-gray-900");
         body.classList.toggle("text-white");
+    
+        // Cambiar las clases de las secciones y divs
+        sections.forEach((section) => {
+          section.classList.toggle("bg-gray-800");
+          section.classList.toggle("bg-gray-200"); // Cambia al color claro
+        });
+    
+        divs.forEach((div) => {
+          div.classList.toggle("bg-blue-700");
+          div.classList.toggle("bg-blue-200"); // Cambia al color claro
+        });
+    
+        // Cambiar el texto del botón según el tema actual
         if (body.classList.contains("bg-white")) {
           toggleButton.textContent = "Cambiar a modo oscuro";
         } else {
@@ -75,5 +93,6 @@ import 'tailwindcss/tailwind.css';
         }
       });
     </script>
+    
   </body>
 </html>
