@@ -41,9 +41,9 @@ import 'tailwindcss/tailwind.css';
 
       <button
         id="toggleTheme"
-        class="mt-8 px-6 py-2 bg-gray-700 text-lg font-bold rounded-full hover:bg-gray-600"
+        class="mt-6 px-5 py-3 bg-gray-700 text-lg font-bold rounded-full hover:bg-gray-600"
       >
-        Cambiar a modo claro
+        Cambiar a Modo Claro
       </button>
     </section>
 
@@ -58,6 +58,22 @@ import 'tailwindcss/tailwind.css';
     <section id="aboutme">
       <AboutMe />
     </section>
-    
+
+    <script>
+
+      const body = document.getElementById("body");
+      const toggleButton = document.getElementById("toggleTheme");
+      toggleButton.addEventListener("click", function () {
+        body.classList.toggle("bg-white");
+        body.classList.toggle("text-black");
+        body.classList.toggle("bg-gray-900");
+        body.classList.toggle("text-white");
+        if (body.classList.contains("bg-white")) {
+          toggleButton.textContent = "Cambiar a modo oscuro";
+        } else {
+          toggleButton.textContent = "Cambiar a modo claro";
+        }
+      });
+    </script>
   </body>
 </html>
